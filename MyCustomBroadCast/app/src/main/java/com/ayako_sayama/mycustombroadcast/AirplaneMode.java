@@ -12,9 +12,11 @@ public class AirplaneMode extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Action: Airplane Mode!! " + intent.getAction() + "\n");
-        String log = sb.toString();
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("Action: Airplane Mode!! " + intent.getAction() + "\n");
+//        String log = sb.toString();
+
+        String log = intent.getAction().toString();
         Toast.makeText(context, log, Toast.LENGTH_LONG).show();
 
     }

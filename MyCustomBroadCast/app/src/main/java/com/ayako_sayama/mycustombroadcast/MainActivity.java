@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 String sendString = editText.getText().toString();
                 Log.i(TAG, "onClick: " + sendString);
 
+                //このsend_stringはどこからきているのか・・？
                 Intent intent = new Intent("com.ayako_sayama.android.SEND_STRING");
                 intent.putExtra("data",sendString);
                 Log.i(TAG, "intent: "+intent);
