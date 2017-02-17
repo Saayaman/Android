@@ -9,7 +9,7 @@ import android.widget.TextView;
 /**
  * Created by ayako_sayama on 2017/02/16.
  */
-public class PlayerOne {
+public class Player {
 
     private static final String TAG = "MainActivity";
     GuessRandom guessRandom;
@@ -20,90 +20,92 @@ public class PlayerOne {
     int max = 10000000;
     int min = 1;
 
-    View player1;
+    View player;
 
-    View p1BtnOne;
-    View p1BtnTwo;
-    View p1BtnThree;
-    View p1BtnFour;
+    View btnOne;
+    View btnTwo;
+    View btnThree;
+    View btnFour;
 
-    Button p1BtnNext;
+    Button btnNext;
 
-    TextView scoreOne;
-    TextView calOne;
-    int p1Score = 0;
+    TextView score;
+    TextView cal;
+    int sccore = 0;
 
     int valueOne;
     int valueTwo;
     int valueThree;
     int valueFour;
 
-    PlayerOne(View rootView) {
-        this.player1 = rootView;
-        p1Score = 0;
+    Player(View rootView) {
+        this.player = rootView;
+        sccore = 0;
 
-        p1BtnOne = player1.findViewById(R.id.btnOne);
-        p1BtnTwo = player1.findViewById(R.id.btnTwo);
-        p1BtnThree = player1.findViewById(R.id.btnThree);
-        p1BtnFour = player1.findViewById(R.id.btnFour);
+        btnOne = player.findViewById(R.id.btnOne);
+        btnTwo = player.findViewById(R.id.btnTwo);
+        btnThree = player.findViewById(R.id.btnThree);
+        btnFour = player.findViewById(R.id.btnFour);
 
-        p1BtnNext = (Button)player1.findViewById(R.id.btnNext);
-        p1BtnNext.setVisibility(View.INVISIBLE);
+        btnNext = (Button) player.findViewById(R.id.btnNext);
+        btnNext.setVisibility(View.INVISIBLE);
 
-        scoreOne = (TextView) player1.findViewById(R.id.txtScoreOne);
-        calOne = (TextView) player1.findViewById(R.id.calculationOne);
+        score = (TextView) player.findViewById(R.id.txtScore);
+        cal = (TextView) player.findViewById(R.id.calculation);
     }
 
-    public int getP1Score() {
-        return p1Score;
+    public int getScore() {
+        return sccore;
     }
-
-    public void setP1Score(int p1Score) {
-        this.p1Score = p1Score;
-    }
-
 
     public void setClick() {
 
-        p1BtnNext.setOnClickListener(new View.OnClickListener() {
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                p1BtnNext.setVisibility(View.INVISIBLE);
+                btnNext.setVisibility(View.INVISIBLE);
+                enAbleButtons();
                 shuffleNumbers();
                 randomAnswer();
             }
         });
-
-        p1BtnOne.setOnClickListener(new View.OnClickListener() {
+        btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 guessRandom = new GuessRandom(1);
-                p1BtnOne.setPressed(true);
+                btnOne.setPressed(true);
                 guessRandom.execute();
             }
         });
-        p1BtnTwo.setOnClickListener(new View.OnClickListener() {
+        btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 guessRandom = new GuessRandom(2);
-                p1BtnTwo.setPressed(true);
+                btnTwo.setPressed(true);
                 guessRandom.execute();
             }
         });
-        p1BtnThree.setOnClickListener(new View.OnClickListener() {
+        btnThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 guessRandom = new GuessRandom(3);
                 guessRandom.execute();
             }
         });
-        p1BtnFour.setOnClickListener(new View.OnClickListener() {
+        btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 guessRandom = new GuessRandom(4);
                 guessRandom.execute();
             }
         });
+    }
+
+    private void enAbleButtons() {
+        btnOne.setEnabled(true);
+        btnTwo.setEnabled(true);
+        btnThree.setEnabled(true);
+        btnFour.setEnabled(true);
     }
 
     public void randomAnswer() {
@@ -152,10 +154,18 @@ public class PlayerOne {
             super.onPreExecute();
 
             switch (type) {
-                case 1:targetNum = valueOne; break;
-                case 2: targetNum = valueTwo; break;
-                case 3: targetNum = valueThree; break;
-                case 4: targetNum = valueFour; break;
+                case 1:targetNum = valueOne;
+                    btnOne.setEnabled(false);
+                    break;
+                case 2: targetNum = valueTwo;
+                    btnTwo.setEnabled(false);
+                    break;
+                case 3: targetNum = valueThree;
+                    btnThree.setEnabled(false);
+                    break;
+                case 4: targetNum = valueFour;
+                    btnFour.setEnabled(false);
+                    break;
                 default: break;
             }
 
@@ -168,20 +178,20 @@ public class PlayerOne {
             super.onPostExecute(aLong);
             Log.i(TAG, "aLong is: "+aLong);
             if(aLong == randomAnswer){
-                calOne.setText("Found Answer! "+randomAnswer);
-                p1Score++;
-                scoreOne.setText(p1Score+"");
-                p1BtnNext.setVisibility(View.VISIBLE);
+                cal.setText("Found Answer! "+randomAnswer);
+                sccore++;
+                score.setText(sccore +"");
+                btnNext.setVisibility(View.VISIBLE);
 
             } else {
-                calOne.setText("No answer here! Try next button.");
+                cal.setText("No answer here! Try next button.");
             }
         }
 
         @Override
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
-            calOne.setText("Calculating..." + values[0]);
+            cal.setText("Calculating..." + values[0]);
         }
         @Override
         protected Integer doInBackground(Void... params) {

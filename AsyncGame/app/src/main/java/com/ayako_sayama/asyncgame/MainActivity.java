@@ -1,5 +1,6 @@
 package com.ayako_sayama.asyncgame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView time;
+    Player syncOne;
+    Player syncTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
         setTimer();
 
-        PlayerOne syncOne = new PlayerOne(findViewById(R.id.playerOne));
+        syncOne = new Player(findViewById(R.id.playerOne));
         syncOne.randomAnswer();
         syncOne.shuffleNumbers();
         syncOne.setClick();
 
 
-        PlayerOne syncTwo = new PlayerOne(findViewById(R.id.playerTwo));
+        syncTwo = new Player(findViewById(R.id.playerTwo));
         syncTwo.randomAnswer();
         syncTwo.shuffleNumbers();
         syncTwo.setClick();
@@ -30,12 +33,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTimer() {
         time = (TextView)findViewById(R.id.txtTime);
-        CountDownTimer timer = new CountDownTimer(30000, 1000) {
+        final CountDownTimer timer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) {
                 time.setText("Time: "+ millisUntilFinished / 1000);
             }
             public void onFinish() {
                 time.setText("Time UP!!");
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                int p1Score = syncOne.getScore();
+                int p2Score = syncTwo.getScore();
+                intent.putExtra("p1Score", p1Score);
+                intent.putExtra("p2Score", p2Score);
+                startActivity(intent);
             }
         };
         timer.start();
