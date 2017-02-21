@@ -6,6 +6,8 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.ayako_sayama.asyncgame.player.Player;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView time;
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTimer() {
         time = (TextView)findViewById(R.id.txtTime);
-        final CountDownTimer timer = new CountDownTimer(10000, 1000) {
+        final CountDownTimer timer = new CountDownTimer(30000, 1000) {
             public void onTick(long millisUntilFinished) {
                 time.setText("Time: "+ millisUntilFinished / 1000);
             }

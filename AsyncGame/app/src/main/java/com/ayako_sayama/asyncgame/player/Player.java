@@ -1,10 +1,12 @@
-package com.ayako_sayama.asyncgame;
+package com.ayako_sayama.asyncgame.player;
 
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.ayako_sayama.asyncgame.R;
 
 /**
  * Created by ayako_sayama on 2017/02/16.
@@ -38,7 +40,7 @@ public class Player {
     int valueThree;
     int valueFour;
 
-    Player(View rootView) {
+    public Player(View rootView) {
         this.player = rootView;
         sccore = 0;
 
