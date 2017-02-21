@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NumberPickerPreference</string>
+    <string name="showdialog">showDialog</string>
+    <string name="cancel">Cancel</string>
+</resources>
