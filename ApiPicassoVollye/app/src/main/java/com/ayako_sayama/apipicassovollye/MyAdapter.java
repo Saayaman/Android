@@ -18,6 +18,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import static android.content.ContentValues.TAG;
+import static com.ayako_sayama.apipicassovollye.MainActivity.PHOTO_PATH;
 
 /**
  * Created by ayako_sayama on 2017/02/21.
@@ -26,6 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
 
     private ArrayList<Flowers> flowers;
     private Context context;
+
 
     public MyAdapter(ArrayList<Flowers> flowers, Context context) {
         this.flowers = flowers;
@@ -42,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     @Override
     public void onBindViewHolder(final Holder holder, final int position) {
         holder.textView.setText(flowers.get(position).getName());
-        Picasso.with(context).load("http://services.hanselandpetal.com/photos/"+flowers.get(position).getPhoto()).into(holder.imageView);
+        Picasso.with(context).load(PHOTO_PATH+flowers.get(position).getPhoto()).into(holder.imageView);
         Log.i(TAG, "onBindViewHolder: "+flowers.get(position).getPhoto());
         holder.menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
