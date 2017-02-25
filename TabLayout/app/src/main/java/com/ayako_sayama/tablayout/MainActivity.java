@@ -1,17 +1,11 @@
 package com.ayako_sayama.tablayout;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TabHost;
-import android.widget.TextView;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +26,7 @@ public class MainActivity extends FragmentActivity {
         tabSpec2.setIndicator("Button2");
         Bundle bundle2 = new Bundle();
         bundle2.putString("name", "Tab2");
-        host.addTab(tabSpec2, SampleFragment.class, bundle2);
-
+        host.addTab(tabSpec2, SampleFragment2.class, bundle2);
     }
 
-    public static class SampleFragment extends Fragment {
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-            TextView textView = new TextView(getActivity());
-            textView.setGravity(Gravity.CENTER);
-            textView.setText(getArguments().getString("name"));
-
-            return textView;
-        }
-
-    }
 }
