@@ -1,15 +1,18 @@
 package com.ayako_sayama.asyncgame;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.ayako_sayama.asyncgame.player.Player;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "preferences";
     TextView time;
     Player syncOne;
     Player syncTwo;
@@ -19,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setTimer();
+        setTimer() ;
 
         syncOne = new Player(findViewById(R.id.playerOne));
         syncOne.randomAnswer();
@@ -35,7 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTimer() {
         time = (TextView)findViewById(R.id.txtTime);
-        final CountDownTimer timer = new CountDownTimer(30000, 1000) {
+
+        //ここでshared preferencesを読み込む！
+        SharedPreferences prefs = getSharedPreferences("user",MODE_PRIVATE);
+        int gameTime = prefs.getInt("user",14);
+
+        // gametime = 20だとしたら、20000で20秒という意味
+        final CountDownTimer timer = new CountDownTimer(gameTime*1000, 1000) {
             public void onTick(long millisUntilFinished) {
                 time.setText("Time: "+ millisUntilFinished / 1000);
             }

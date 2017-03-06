@@ -13,20 +13,28 @@
     tools:context="com.ayako_sayama.asyncgame.OpeningActivity">
 
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_action_name"
-        android:id="@+id/imageButton3" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:baselineAligned="false"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:orientation="vertical"
-        android:baselineAligned="false">
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:onClick="showDialog"
+            app:srcCompat="@drawable/ic_action_name" />
+
+        <TextView
+            android:id="@+id/gameTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Show Time:1234"
+            android:textSize="20dp" />
 
     </LinearLayout>
 
