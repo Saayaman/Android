@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ayako_sayama.practice.com.ayako_sayama.Permissions.MainActivity">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Button
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="ask"
+            android:text="Location"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:onClick="ask"
+            android:text="Camera"
+            app:layout_constraintLeft_toLeftOf="@+id/call"
+            app:layout_constraintRight_toRightOf="@+id/call"
+            app:layout_constraintTop_toBottomOf="@+id/call" />
+
+        <Button
+            android:id="@+id/read"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:onClick="ask"
+            android:text="Read Exstorate"
+            app:layout_constraintLeft_toLeftOf="@+id/location"
+            app:layout_constraintRight_toRightOf="@+id/location"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
+
+        <Button
+            android:id="@+id/write"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:onClick="ask"
+            android:text="Write Exstorage"
+            app:layout_constraintLeft_toLeftOf="@+id/write"
+            app:layout_constraintRight_toRightOf="@+id/write"
+            app:layout_constraintTop_toBottomOf="@+id/write" />
+
+        <Button
+            android:id="@+id/call"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:onClick="ask"
+            android:text="Call"
+            app:layout_constraintLeft_toLeftOf="@+id/write"
+            app:layout_constraintRight_toRightOf="@+id/write"
+            app:layout_constraintTop_toBottomOf="@+id/write" />
+
+        <Button
+            android:id="@+id/account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:onClick="ask"
+            android:text="Accounts"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintLeft_toLeftOf="@+id/camera"
+            app:layout_constraintRight_toRightOf="@+id/camera"
+            app:layout_constraintTop_toBottomOf="@+id/camera" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
