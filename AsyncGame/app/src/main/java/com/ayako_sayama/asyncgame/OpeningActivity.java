@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 
 public class OpeningActivity extends AppCompatActivity {
 
-    private static final String TAG = "NumberPicker";
     private NumberPicker picker;
     private Dialog dialog;
     TextView gameTime;
@@ -38,8 +36,7 @@ public class OpeningActivity extends AppCompatActivity {
 
     private void setNumText() {
         sharedValue = prefs.getInt("user",20);
-        gameTime.setText(sharedValue+ " ");
-        Log.i(TAG, "setNumText: "+sharedValue);
+        gameTime.setText("Gametime is "+sharedValue+ " seconds");
     }
 
     public void startGame(View view) {
