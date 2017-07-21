@@ -40,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
     public void sendBroadCast(View view) {
         Intent intent = new Intent();
         intent.putExtra("Ayako", "This is the String");
-        intent.setAction("com.ayako_sayama.broadcast.AYAKO_INTENT");
+        intent.setAction("Ayako");
         sendBroadcast(intent);
         Log.i(TAG, "sendBroadCast: Sent!");
 
+//      when you don't have extras put this
 //       sendBroadcast(new Intent().setAction("Ayako"));
 
     }

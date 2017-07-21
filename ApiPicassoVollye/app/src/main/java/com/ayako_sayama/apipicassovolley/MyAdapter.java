@@ -14,9 +14,7 @@ import java.util.List;
 
 import static com.ayako_sayama.apipicassovolley.MainActivity.PHOTO_PATH;
 
-/**
- * Created by ayako_sayama on 2017/02/21.
- */
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
 
     private List<Flowers> flowers;

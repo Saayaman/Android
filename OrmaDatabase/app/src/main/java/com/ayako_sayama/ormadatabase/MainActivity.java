@@ -1,11 +1,15 @@
 package com.ayako_sayama.ormadatabase;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toast.makeText(getApplicationContext(), "isOnline " + isOnline(this), Toast.LENGTH_SHORT).show();
 
         // initialize
         dao = new OrmaDao(getApplicationContext());
@@ -49,8 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 long start = System.currentTimeMillis();
                 dao.insert(todo);
                 Log.e("test", "insert cost " + (System.currentTimeMillis() - start) + "ms");
-//                myAdapter.notifyDataSetChanged();
             }
         });
+    }
+
+    public static boolean isOnline(Context context) {
+        ConnectivityManager cm =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 }
