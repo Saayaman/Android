@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_tag_faces_black_24dp.xml",
+        "source": "/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_tag_faces_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_alarm_on_black_24dp.xml",
+        "source": "/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_alarm_on_black_24dp.xml"
+    }
+]

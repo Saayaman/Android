@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/ayako_sayama/.android/build-cache/b522ce0e1f34076b1ea3d4d1abc0983b70e1c4f6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/pre-dexed/debug/classes_e39f36240a8687e58a8d513ea1ce87606f5bb2f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ayako_sayama/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.0_c65145f980d75c3be13ba39d05b4d8676ea406c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ayako_sayama/.android/build-cache/6edd8f59127380583a54759daa6c04ecb454b65d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/pre-dexed/debug/classes_4037f0c79dcbbf821793dbe1857417376f4c42bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ayako_sayama/.android/build-cache/daa2c6cac6c919e7fd8e8fcb0627e1e77b8df869/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/pre-dexed/debug/classes_77eeaa089d2b7b2f18dfd8e069e9480a37dc534f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ayako_sayama/.android/build-cache/570d64e74c9c7c262725e503bac82c7201837bd1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/pre-dexed/debug/classes_1ac03c67b61a69a34b00ec1710f78b289ef6fa14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/ayako_sayama/.android/build-cache/daa2c6cac6c919e7fd8e8fcb0627e1e77b8df869/output/jars/libs/internal_impl-23.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.0_61a63c692b115b48d5d4808d2e72a2f010e94d4c.jar" />
+    </item>
+
+</items>

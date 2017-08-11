@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/ayako_sayama/.android/build-cache/b522ce0e1f34076b1ea3d4d1abc0983b70e1c4f6/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/ayako_sayama/.android/build-cache/b522ce0e1f34076b1ea3d4d1abc0983b70e1c4f6/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/ayako_sayama/AndroidStudioProjects/MemoryEater/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/ayako_sayama/.android/build-cache/b522ce0e1f34076b1ea3d4d1abc0983b70e1c4f6/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    }
+]
